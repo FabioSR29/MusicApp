@@ -1,6 +1,6 @@
 <template>
     <div class="inicio">
-        <p class="titulos">Nuevos artistas</p> 
+        <p class="titulos"> artistas</p> 
        
         <div class="arrows">
             <span>ver mas+</span>
