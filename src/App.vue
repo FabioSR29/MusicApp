@@ -13,6 +13,7 @@ import albums from './components/albums.vue'
 <artist/>
 <albums/>
 <barra/>
+
 </template>
 
 <style>

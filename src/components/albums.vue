@@ -160,7 +160,7 @@ flex-wrap: wrap;
 }
 
 .cuatro{
-    background-image: url("https://decibeles.cr/wp-content/uploads/2021/07/81bkBmODx9L._SL1500_.jpg") ;
+    background-image: url("https://lashistoriasdelrock.com/wp-content/uploads/2023/04/descarga.gif") ;
 }
 
 .cinco{

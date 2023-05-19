@@ -15,7 +15,9 @@
 
             <div class="lupa">
 
-                <button class="search-button">
+                <input type="text" v-model="artistName" placeholder="Nombre del artista">
+
+                <button class="search-button" @click="buscarArtista">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="rgb(0, 225, 255)" class="w-6 h-6 lupa">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -24,12 +26,99 @@
                 </button>
                     <p>Buscar</p>
            </div>
-           
+
+    </div>
+
+    
+    <div class="resultado" v-show="visible">
+            <p>Resultados de busqueda:</p>
+            <p>Nombre del artista: {{ artista }}</p>
+            <p>Genero: {{ genero }}</p>
+             <img :src="imagen" alt="imagenartista" v-show="imagen2">
+     
 
     </div>
 </template>
 
+<script setup>
+import { ref, onMounted } from 'vue'
+
+
+
+const visible = ref(false)
+const artista =ref("-----")
+const genero =ref("-----")
+const imagen=ref("none")
+const imagen2=ref(false);
+const artistName = ref('');
+
+function buscarArtista() {
+
+    visible.value = true;
+   
+    console.log(artistName)
+    const clientId = '070080c886ae4b71b5752324a9201d69';
+    const clientSecret = '496308c7c51642aaa5b80aaa7b3c5fd7';
+
+
+    fetch('https://accounts.spotify.com/api/token', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret)
+        },
+        body: 'grant_type=client_credentials'
+    })
+        .then(response => response.json())
+        .then(data => {
+            const accessToken = data.access_token;
+
+
+            fetch(`https://api.spotify.com/v1/search?q=${encodeURIComponent(artistName.value)}&type=artist`, {
+                headers: {
+                    'Authorization': 'Bearer ' + accessToken
+                }
+            })
+                .then(response => response.json())
+                .then(searchData => {
+
+                    const artist = searchData.artists.items[0];
+                    console.log(searchData)
+                    if (artist) {
+
+                        alert("artista encontrado")
+
+                        artista.value=artist.name;
+                        genero.value= artist.genres.length > 0 ? artist.genres.join(', ') : 'No se encontraron géneros';
+                        imagen.value=artist.images[0].url;
+                        imagen2.value=true;
+              
+                    } else {
+
+                     alert("No se encontro")
+                    }
+                });
+        });
+
+
+}//FIN DEL METODO
+
+
+</script>
+
+
 <style scoped>
+
+.resultado{
+    display: block;
+
+    border: 5px solid rgb(0, 238, 255);
+
+}
+.resultado img{
+    height: 50%;
+    width: 50%;
+}
 .search-button {
   background-color: transparent; 
   border: none; 
