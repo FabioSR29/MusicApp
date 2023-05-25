@@ -134,8 +134,8 @@ font-size: 35px;
 @media only screen and (max-width: 475px) {
 
   .options {
-    display: block;
-   
+   flex-wrap: wrap;
+    
    
   }
   .music{

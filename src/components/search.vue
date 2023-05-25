@@ -8,7 +8,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
             </svg>
-            <p>MusicApp</p>
+            <p id="ini">MusicApp</p>
 
 
         </div>
@@ -24,7 +24,7 @@
                             d="M15.75 15.75l-2.489-2.489m0 0a3.375 3.375 0 10-4.773-4.773 3.375 3.375 0 004.774 4.774zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                 </button>
-                    <p>Buscar</p>
+                    <p id="ini">Buscar</p>
            </div>
 
     </div>
@@ -35,8 +35,6 @@
             <p>Nombre del artista: {{ artista }}</p>
             <p>Genero: {{ genero }}</p>
              <img :src="imagen" alt="imagenartista" v-show="imagen2">
-     
-
     </div>
 </template>
 
@@ -86,7 +84,7 @@ function buscarArtista() {
                     console.log(searchData)
                     if (artist) {
 
-                        alert("artista encontrado")
+                     
 
                         artista.value=artist.name;
                         genero.value= artist.genres.length > 0 ? artist.genres.join(', ') : 'No se encontraron géneros';
@@ -112,12 +110,13 @@ function buscarArtista() {
 .resultado{
     display: block;
 
-    border: 5px solid rgb(0, 238, 255);
+    border: 1px solid rgb(0, 238, 255);
 
 }
 .resultado img{
     height: 50%;
     width: 50%;
+    margin-left: 25%;
 }
 .search-button {
   background-color: transparent; 
@@ -172,6 +171,12 @@ p{
         0 0 5px rgb(0, 0, 0),
         0 0 5px rgb(0, 0, 0),
         0 0 5px rgb(0, 0, 0);  
+}
+
+@media only screen and (max-width: 475px) {
+#ini{
+    display: none;
+}
 }
 
 </style>
