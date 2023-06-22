@@ -79,15 +79,21 @@ p{
 .elements{
   position: fixed;
   display: flex;
-  height: 93px;
+  height: 85px;
   width: 100%;
   bottom: 0%;
-  margin-left: -1%;
+  margin-left: -0.7%;
   border-radius: 15px;
   justify-content: center;
   background-color: rgb(0, 0, 0);
   border:1px solid cyan;
 }
+@media only screen and (max-width: 475px) {
+  .elements{
+    margin-left: -2.5%;
+  } 
+
+  }
 
 .button {
   display: flex;

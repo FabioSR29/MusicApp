@@ -1,5 +1,5 @@
 <template>
-    <div class="inicio">
+    <div class="inicio" v-show="artistVisible.visibilidad">
         <p class="titulos">Nuevos artistas</p> 
        
         <div class="arrows">
@@ -17,7 +17,7 @@
 
     </div>
 
- <div class="cartas">
+ <div class="cartas" v-show="artistVisible.visibilidad">
 
 
 <div class="myCard">
@@ -36,6 +36,7 @@
       <div class="backSide">
           <p class="title">Informacion:</p>
           <p>Weeknd, es un cantante, rapero, compositor, productor discográfico y actor canadiense nacionalizado</p>
+          <button class="Botones" @click="navegar('the weekend')">Ver mas+</button>
       </div>
   </div>
 </div>
@@ -51,7 +52,8 @@
       <div class="backSide">
           <p class="title">Informacion:</p>
           <p>Austin Richard Post, más conocido por su nombre artístico Post Malone, es un rapero, cantante, actor y compositor estadounidense </p>
-      </div>
+          <button class="Botones" @click="navegar('post malone')">Ver mas+</button>
+        </div>
   </div>
 </div>
 
@@ -65,8 +67,9 @@
       </div>
       <div class="backSide">
           <p class="title">Informacion:</p>
-          <p>Linkin Park es una banda estadounidense de rock alternativo procedente de Agoura Hills, California formada en 1996. Integrada por Mike Shinoda, Dave Farrell, Joe Hahn, Brad Delson, Rob Bourdon y Chester Bennington</p>
-      </div>
+          <p>Linkin Park es una banda estadounidense de rock alternativo procedente de Agoura Hills, California formada en 1996.</p>
+          <button class="Botones" @click="navegar('linkin park')">Ver mas+</button>
+        </div>
   </div>
 </div>
 
@@ -81,7 +84,8 @@
       <div class="backSide">
           <p class="title">Informacion:</p>
          <p>Ariana Grande Butera ​ es una cantante, compositora, empresaria, instrumentista, productora discográfica y actriz estadounidense.​ </p>
-      </div>
+         <button class="Botones" @click="navegar('ariana grande')">Ver mas+</button>
+        </div>
   </div>
 </div>
 
@@ -96,7 +100,8 @@
       <div class="backSide">
           <p class="title">Informacion:</p>
           <p>AC/DC es una banda de hard rock británica-australiana, formada en 1973 en Australia por los hermanos escoceses Malcolm Young y Angus Young.</p>
-      </div>
+          <button class="Botones" @click="navegar('AC DC')">Ver mas+</button>
+        </div>
   </div>
 </div>
 
@@ -104,7 +109,26 @@
 
 </template>
 
+<script setup>
+
+import { artistVisible } from "./Logica.js";
+function navegar(nombre){
+  artistVisible.cambiar(nombre);
+  artistVisible.buscarArtista(nombre);
+}
+
+</script>
+
 <style scoped>
+
+.Botones{
+  font-size:20px;
+  font-weight: bold;
+  color: white;
+  background: #0f68ee;
+  border-radius: 6px;
+  border: white 1px solid;
+}
 
 .arrows{
     display: flex;

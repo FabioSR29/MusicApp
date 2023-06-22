@@ -1,5 +1,5 @@
 <template>
-    <div class="inicio">
+    <div class="inicio" v-show="albumesVisible.visibilidad">
         <p class="titulos">Albumes populares</p> 
        
         <div class="arrows">
@@ -18,10 +18,10 @@
     </div>
 
 
-<div class="albumes">
+<div class="albumes" v-show="albumesVisible.visibilidad">
 
 
-    <div class="card">
+    <button class="card" @click="navegar('71O60S5gIJSIAhdnrDIh3N')">
     <div class="temporary_text">
         <div class="imagen uno"></div>
     </div>
@@ -32,9 +32,9 @@
     
     </div>
 
-    </div>
+    </button>
 
-    <div class="card">
+    <button class="card" @click="navegar('3RQQmkQEvNCY4prGKE6oc5')">
     <div class="temporary_text">
 
         <div class="imagen dos"></div>
@@ -47,11 +47,11 @@
     
     </div>
 
-    </div>
+    </button>
 
 
     
-    <div class="card">
+    <button class="card" @click="navegar('2eRJUtI7nXrQ5uYQ7tzTo9')">
     <div class="temporary_text">
 
         <div class="imagen tres"></div>
@@ -64,10 +64,10 @@
     
     </div>
 
-    </div>
+    </button>
 
     
-    <div class="card">
+    <button class="card" @click="navegar('4Gfnly5CzMJQqkUFfoHaP3')">
     <div class="temporary_text">
 
         <div class="imagen cuatro"></div>
@@ -80,10 +80,10 @@
     
     </div>
 
-    </div>
+    </button>
 
     
-    <div class="card">
+    <button class="card" @click="navegar('151w1FgRZfnKZA9FEcg9Z3')">
     <div class="temporary_text">
 
         <div class="imagen cinco"></div>
@@ -96,12 +96,21 @@
     
     </div>
 
-    </div>
+    </button>
 
 </div>
   
 
 </template>
+
+<script setup>
+import { albumesVisible } from "./Logica.js";
+
+function navegar(ID){
+  albumesVisible.buscarAlbum(ID);
+  albumesVisible.cambiar();
+}
+</script>
 
 <style scoped>
 

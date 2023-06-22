@@ -1,9 +1,9 @@
 <template>
  <div class="elements">
 
-    <div class="inicio">
-        <p class="text">Nuevas <br> canciones <br> disponibles</p>
-    </div>
+    <button class="inicio" v-show="data.visibilidad" @click="navegar('cold play')">
+        <p class="titulos">Nuevas <br> canciones <br> disponibles</p>
+    </button>
 </div>  
 
     <div class="options">
@@ -92,6 +92,17 @@
 
 </template>
 
+<script setup>
+import { artistVisible,data } from "./Logica.js";
+function navegar(nombre){
+  artistVisible.cambiar(nombre);
+  artistVisible.buscarArtista(nombre);
+  data.cambiar();
+}
+
+
+</script>
+
 <style  scoped>
 .icons{
     margin-top: 55px;
@@ -99,6 +110,22 @@
 .texto{
     color: aliceblue;
     font-size: 15px;
+}
+.titulos{
+    font-size:20px;
+  font-weight: bold;
+  color: white;
+      text-shadow: 
+        0 0 5px rgb(0, 0, 0),
+        0 0 5px rgb(0, 0, 0),
+        0 0 5px rgb(10, 10, 10),
+        0 0 5px rgb(0, 0, 0),
+        0 0 5px rgb(0, 0, 0),
+        0 0 5px rgb(0, 0, 0),
+        0 0 5px rgb(0, 0, 0),
+        0 0 5px rgb(0, 0, 0),
+        0 0 5px rgb(0, 0, 0),
+        0 0 5px rgb(0, 0, 0);  
 }
 .music{
     height: 5px;
@@ -129,6 +156,7 @@
  color: aliceblue;
 font-size: 35px;
 }
+
 
 
 @media only screen and (max-width: 475px) {
