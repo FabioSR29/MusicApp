@@ -27,8 +27,7 @@
     </div>
     <div class="card_content">
     <span class="card_title">Black_Pink_The album</span>
-        <span class="card_subtitle">Lorem ipsum dolor sit amet conse</span>
-        <p class="card_description">Lorem ipsum dolor, sit amet  expedita exercitationem recusandae aut dolor tempora aperiam itaque possimus at, cupiditate earum, quae repudiandae aspernatur? Labore minus soluta consequatur placeat.</p>
+        <span class="card_subtitle">Grupo koreano de musica pop</span>
     
     </div>
 
@@ -42,8 +41,7 @@
     </div>
     <div class="card_content">
     <span class="card_title">Bad_Bunny_Un_Verano_Sin_Ti</span>
-        <span class="card_subtitle">Lorem ipsum dolor sit, amet consectetur</span>
-        <p class="card_description">Lorem ipsum dolor, sit amet  expedita exercitationem recusandae aut dolor tempora aperiam itaque possimus at, cupiditate earum, quae repudiandae aspernatur? Labore minus soluta consequatur placeat.</p>
+        <span class="card_subtitle">Artisata urbano del momento</span>
     
     </div>
 
@@ -59,8 +57,7 @@
     </div>
     <div class="card_content">
     <span class="card_title">Lady_Gaga_Artpop</span>
-        <span class="card_subtitle">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias quidem i</span>
-        <p class="card_description">Lorem ipsum dolor, sit amet  expedita exercitationem recusandae aut dolor tempora aperiam itaque possimus at, cupiditate earum, quae repudiandae aspernatur? Labore minus soluta consequatur placeat.</p>
+        <span class="card_subtitle">Artista pop revolucionario en epocas del 2010</span>
     
     </div>
 
@@ -75,8 +72,7 @@
     </div>
     <div class="card_content">
     <span class="card_title">Linkin_Park_Meteora</span>
-        <span class="card_subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi consectetur </span>
-        <p class="card_description">Lorem ipsum dolor, sit amet  expedita exercitationem recusandae aut dolor tempora aperiam itaque possimus at, cupiditate earum, quae repudiandae aspernatur? Labore minus soluta consequatur placeat.</p>
+        <span class="card_subtitle">Banda de rock alternativo con grandes hits</span>
     
     </div>
 
@@ -91,8 +87,7 @@
     </div>
     <div class="card_content">
     <span class="card_title">Midnights_-_Taylor_Swift</span>
-        <span class="card_subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi alias minima</span>
-        <p class="card_description">Lorem ipsum dolor, sit amet  expedita exercitationem recusandae aut dolor tempora aperiam itaque possimus at, cupiditate earum, quae repudiandae aspernatur? Labore minus soluta consequatur placeat.</p>
+        <span class="card_subtitle">Solista de pop con mas premios en la industria moderna</span>
     
     </div>
 
@@ -204,7 +199,7 @@ flex-wrap: wrap;
   position: absolute;
   left: 0;
   bottom: 0;
-   
+  flex-wrap: wrap;
   width: 100%;
   padding: 20px;
   background: #14eeee;

@@ -14,6 +14,7 @@ export let albumesVisible = reactive({
     total_tracks:0,
     imagenUrl:"none",
     name:"",
+    carga:true,
     cambiar(){
       if(this.visibilidad==true){
         this.visibilidad=false
@@ -53,6 +54,7 @@ export let albumesVisible = reactive({
                         this.total_tracks=album.total_tracks;
                         this.imagenUrl=album.images[0].url;
                         this.name=album.name;
+                        this.carga=false
               
                       } else {
     
@@ -76,6 +78,7 @@ export let artistVisible = reactive({
     imagen:"none",
     followers:0,
     visibilidadImagen:false,
+    carga:true,
     cambiar(nombre){
       this.name=nombre;
       data.visibilidad=true;
@@ -123,7 +126,7 @@ export let artistVisible = reactive({
                       this.imagen=artist.images[0].url;
                       this.followers=artist.followers.total; 
                       this.visibilidadImagen=true;
-                    
+                      this.carga=false;
             
                   } else {
 
