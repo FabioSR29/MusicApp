@@ -294,7 +294,14 @@ function navegar(nombre){
  margin-top:175px;
  width: 100%;
  border:1px solid white
+}
 
-
+@media only screen and (min-width: 1025px) {
+  .myCard {
+  background-color: transparent;
+  width: 290px;
+  height: 354px;
+  perspective: 1000px;
+} 
 }
 </style>

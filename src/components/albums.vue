@@ -111,8 +111,10 @@ function navegar(ID){
 
 .albumes{
 display: flex;
-gap: 13px;
+justify-content: space-between;
 flex-wrap: wrap;
+margin-left: 35px;
+margin-right: 35px;
 }
 
 .arrows{
@@ -245,6 +247,17 @@ flex-wrap: wrap;
   opacity: 1;
   transition-delay: .25s;
 }
+@media only screen and (min-width: 1025px) {
+  .card {
+  width: 350px;
+  height: 350px;
 
+}
+.imagen{
+    background-size: 111% 100%;
+    width: 350px;
+    height: 350px;
+}
+}
 
 </style>
